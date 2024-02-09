@@ -1,7 +1,26 @@
 <script>
   import Birthday from "./Birthday.svelte";
+
+  export let data;
 </script>
 
 <h1>Birthday list</h1>
-<Birthday name="Hercules" dob="1994-03-15" />
-<Birthday name="Athena" dob="2001-08-27" />
+
+<ul>
+  {#if data}
+    {#each data as person}
+      <li>
+        <Birthday name={person.name} dob={person.dob} />
+      </li>
+    {/each}
+  {/if}
+</ul>
+
+<style>
+  li {
+    list-style: none;
+  }
+  ul {
+    padding: 0;
+  }
+</style>
