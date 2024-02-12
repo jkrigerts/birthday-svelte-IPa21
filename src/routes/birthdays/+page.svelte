@@ -1,5 +1,6 @@
 <script>
   import Birthday from "./Birthday.svelte";
+	import BirthdayForm from "./BirthdayForm.svelte";
 
   export let data;
   let birthdays = data.birthdays;
@@ -16,6 +17,9 @@
     {/each}
   {/if}
 </ul>
+
+<h1>Add a new birthday</h1>
+<BirthdayForm />
 
 <style>
   li {
